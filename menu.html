@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    background: #ffeef5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #ff5c9e;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.menu-btn {
+    display: block;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: #ff6fa9;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #ff4f92;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>For You, Riej 💗</h1>
+    <p>choose what you want to open</p>
+
+    <a href="text.html" class="menu-btn">💌 Long Text</a>
+    <a href="gallery.html" class="menu-btn">📸 Gallery</a>
+    <a href="flower.html" class="menu-btn">🌸 Flowers</a>
+    <a href="index.html" class="menu-btn">💗 Back to Home</a>
+</div>
+    <audio id="global-music" autoplay loop>
+        <source src="backsound.mp3" type="audio/mpeg">
+    </audio>
+    <script src="music.js"></script>
+</body>
+</html>

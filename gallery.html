@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Gallery 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    background: #ffeef5;
+    overflow-x: hidden;
+}
+
+/* Container */
+.gallery-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    color: #ff5c9e;
+    margin-bottom: 40px;
+}
+
+/* Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+}
+
+/* Polaroid */
+.polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.polaroid img {
+    width: 100%;
+    display: block;
+}
+
+.polaroid:nth-child(odd) {
+    transform: rotate(-4deg);
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(4deg);
+}
+
+.polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+/* Button */
+.next-btn {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 12px 30px;
+    background: #ff6fa9;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background-color: #ff4f92;
+    transform: scale(1.05);
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    color: pink;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(-10vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="gallery-container">
+    <h1>Our Memories 📸</h1>
+
+    <div class="gallery">
+        <div class="polaroid"><img src="img1.jpeg"></div>
+        <div class="polaroid"><img src="img2.jpeg"></div>
+        <div class="polaroid"><img src="img3.jpeg"></div>
+        <div class="polaroid"><img src="img4.jpeg"></div>
+        <div class="polaroid"><img src="img5.jpeg"></div>
+        <div class="polaroid"><img src="img6.jpeg"></div>
+        <div class="polaroid"><img src="img7.jpeg"></div>
+        <div class="polaroid"><img src="img8.jpeg"></div>
+        <div class="polaroid"><img src="img9.jpeg"></div>
+        <div class="polaroid"><img src="img10.jpeg"></div>
+        <div class="polaroid"><img src="img12.jpeg"></div>
+        <div class="polaroid"><img src="img13.jpeg"></div>
+    </div>
+
+    <a href="menu.html" class="next-btn">Back 💗</a>
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 800);
+</script>
+
+    <audio id="global-music" autoplay loop>
+        <source src="backsound.mp3" type="audio/mpeg">
+    </audio>
+    <script src="music.js"></script>
+
+</body>
+</html>

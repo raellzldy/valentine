@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        /* .next-btn {
+            display: inline-block;
+            margin-top: 60px;
+            padding: 12px 30px;
+            background: #ff6fa9;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+            position: fixed;
+            bottom: 30px;
+            left: 30%;
+            transform: translateX(-50%);
+        } */
+
+        .back-btn {
+            position: fixed;   /* ini bikin dia keluar dari card */
+            bottom: 30px;
+            right: 30px;
+            background: #ff6fa9;
+            padding: 12px 25px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Happy Valentine's Day!</h2>
+        <p id="typing-text"></p>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <script>
+    const text = `valentine kita tuh agak lucuu sebenernya. ga adaa ketemu, ga adaa hand to hand, ga adaa foto bareng jugaa. hubungan kita masii sebatas layar, pap seadanya, chat panjang yg ga beres beres, call hampir tiap hari. agustus kemaren dari yg awalnya cuma ngobrol iseng dikit, trus nyambung, nyaman, dan tiba tiba jadi saling butuh. dan tepat tanggal 20 november 2025 kita ngejalin hubungan yg sngatt fenomenal wkwk krna aku gapernaa pacran trus km yang uda perna pacarann, saling melengkapi bgt emang yahaha.
+
+        trus kita baru mauu 3 bulan pacaran, tapi masalahnya uda kaya pacaran lamaaa. salah paham dikit ribut, adaa banyak momen yg hampir bikin kita udahan, hampir milih nyerah. tapi anehnya, sampe sekarang kita masii di sini, masii saling nyari, masii peduli walaupun sering capeee.
+
+        mungkin karena kita sama sama tauu, rasa ini keburu tumbuh. sejauh jauhnya jarak, sejauu itu juga usaha yg kita keluarin. hubungan virtual emg ga gampang, ga adaa pelukan, ga ada cium, cuma sebatas chat risk doang wkwk, trus ga bisa langsung dateng kalo kamuu lagi butuh, cuma adaa chat, suara, sama cinta yang luar biasa.
+
+        maap yaa aku cuma bisaa kasii hadiah kecil, walaupun ga aku kasih hand to hand, ga aku liat kamu nerimanya, tapi aku seneng ajaa ngebayanginnya. aku harap kamu sukaa, walaupun itu cuma hampers coklat biasa, tapi aku harap itu bisa ngingetin kamu kalo ada aku di sini, yang selalu sayang sm kamuu.
+
+        makasii yaa uda bertahan sejauh inii. makasii uda mau ngadepin ribut, salah paham, capek, tanpa bener bener ninggalin. aku tau ga selalu easy, tapi kamuu tetep stay, and that honestly means a lot to me.
+
+        so yeah, happy valentine. maybe we’re not there yet, masii online, masii lewat layar, but somehow it feels real. i don’t know where this will go, but as long as you’re here, i’m willing to try, pelan pelan, one day at a time.
+        love youu rieejj.`;
+
+    let index = 0;
+    const speed = 30; // makin kecil makin cepet
+    const typingElement = document.getElementById("typing-text");
+
+    function typeWriter() {
+    if (index < text.length) {
+        typingElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+    }
+    }
+
+    typeWriter();
+    </script>
+
+    <a href="menu.html" class="back-btn">Back 💗</a>
+
+
+    <audio id="global-music" autoplay loop>
+        <source src="backsound.mp3" type="audio/mpeg">
+    </audio>
+    <script src="music.js"></script>
+</body>
+</html>
