@@ -21,6 +21,47 @@
             transform: translateX(-50%);
         } */
 
+        body{
+            
+            background-image: url("bgtext.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .cursor-love-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+
+        .love {
+            position: fixed;
+            color: #ff6fa5;
+            font-size: 18px;
+            animation: floatUp 1s linear forwards;
+            opacity: 0.8;
+            pointer-events: none;
+            user-select: none;
+        }
+
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-30px) scale(1.8);
+                opacity: 0;
+            }
+        }
+
         .back-btn {
             position: fixed;   /* ini bikin dia keluar dari card */
             bottom: 30px;
@@ -37,6 +78,7 @@
     </style>
 </head>
 <body>
+    <div class="cursor-love-container"></div>
     <div class="card">
         <h2>Happy Valentine's Day!</h2>
         <p id="typing-text"></p>
@@ -57,7 +99,7 @@
         makasii yaa uda bertahan sejauh inii. makasii uda mau ngadepin ribut, salah paham, capek, tanpa bener bener ninggalin. aku tau ga selalu easy, tapi kamuu tetep stay, and that honestly means a lot to me.
 
         so yeah, happy valentine. maybe we’re not there yet, masii online, masii lewat layar, but somehow it feels real. i don’t know where this will go, but as long as you’re here, i’m willing to try, pelan pelan, one day at a time.
-        love youu rieejj.`;
+        love youu rieejj. 💗`;
 
     let index = 0;
     const speed = 30; // makin kecil makin cepet
@@ -81,5 +123,28 @@
         <source src="backsound.mp3" type="audio/mpeg">
     </audio>
     <script src="music.js"></script>
+    <script>
+        document.addEventListener("mousemove", function(e) {
+
+        let now = Date.now();
+        if (now - lastLove < 120) return; // delay biar ga kebanyakan
+        lastLove = now;
+
+        let love = document.createElement("div");
+        love.classList.add("love");
+        love.innerHTML = "💖";
+
+
+        love.style.left = e.clientX + "px";
+        love.style.top = e.clientY + "px";
+
+        document.querySelector(".cursor-love-container").appendChild(love);
+
+        setTimeout(() => {
+            love.remove();
+        }, 1000);
+    });
+    let lastLove = 0;
+    </script>
 </body>
 </html>
